@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source "/home/asw/_shared/scripts/common.sh"
+source "/home/progetto/_shared/scripts/common.sh"
 
 # see https://docs.docker.com/install/linux/docker-ce/ubuntu/
 
@@ -24,7 +24,7 @@ VAGRANT_USER=vagrant
 # - abilita my-registry:5000 come registry insicuro 
 # 
 mkdir -p /etc/systemd/system/docker.service.d
-cp ${ASW_RESOURCES}/docker.service.d/override.conf /etc/systemd/system/docker.service.d/override.conf
+cp ${PROJECT_RESOURCES}/docker.service.d/override.conf /etc/systemd/system/docker.service.d/override.conf
 chmod a-x /etc/systemd/system/docker.service.d/override.conf
 
 # Update the apt package index 

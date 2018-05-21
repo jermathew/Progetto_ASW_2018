@@ -37,7 +37,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         node.vm.provision :shell, :inline => 'apt-get update'
         node.vm.provision :shell, :inline => 'apt-get install unzip'
 
-        node.vm.provision :shell, path: "../_shared/scripts/setup-java.sh"
+        node.vm.provision :shell, path: "../_shared/scripts/alternative-java-setup.sh"
         # node.vm.provision :shell, path: "../_shared/scripts/setup-gradle.sh"
         # node.vm.provision :shell, path: "../_shared/scripts/setup-maven.sh"
 
