@@ -1,0 +1,15 @@
+server: 
+  port: 8080 
+hello: 
+  word: Default
+
+---
+spring: 
+  profiles: english 
+hello: 
+  word: Hi
+---
+spring: 
+  profiles: italian 
+hello: 
+  word: Ciao
