@@ -15,13 +15,8 @@ public class WordController {
 	
 	private final Logger logger = Logger.getLogger("asw.springcloud.word"); 
 
-	@RequestMapping("/")
-	public String getWord() {
-		/* restituisce una parola a caso tra le parole di questo tipo */ 
-		String[] wordArray = words.split(",");
-		int i = (int) (Math.round(Math.random()*(wordArray.length-1)));
-		String word = wordArray[i];
-		logger.info("getWord(): " + word);
-		return word; 
+	@GetMapping("/")
+	public Word getWord() {
+		return new Word(words[random.nextInt(words.length)]);
 	}
 }

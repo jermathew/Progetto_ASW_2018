@@ -7,7 +7,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @FeignClient("object")
 public interface ObjectClient {
 
-	@RequestMapping(value="/", method=RequestMethod.GET)
+	@GetMapping(value="/")
 	public String getWord(); 
+
+	static class HystrixClientFallback implements ObjectiveClient {
+
+		@Override
+
+		public Word getWord() {
+
+			return new Word();
+
+		}	
+	}	
 
 }
