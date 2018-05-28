@@ -4,7 +4,7 @@ branches:
 install: true
 script:
 - cd project
-- "./build-all-projects.sh"
+- "bash build-all-projects.sh"
 - cd ..
 deploy:
   provider: heroku
