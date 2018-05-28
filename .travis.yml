@@ -4,6 +4,11 @@ branches:
 
 install: true
 
+sudo: required
+
+service: 
+  - docker
+
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
@@ -14,6 +19,9 @@ cache:
 
 script:
 - cd project
-- "bash build-all-projects.sh"
-- cd ..
+- bash build-all-projects.sh
+- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+- bash build-all-images.sh
+
+
 
