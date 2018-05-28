@@ -6,7 +6,7 @@ install: true
 
 sudo: required
 
-service: 
+services: 
   - docker
 
 before_cache:
