@@ -1,0 +1,10 @@
+language: java
+# safelist
+branches:
+  only: travis-ci-jerin
+install: true
+script:
+- cd project
+- ./build-all-projects.sh
+- cd ..
+
