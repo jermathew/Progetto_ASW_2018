@@ -1,6 +1,7 @@
 language: java
 branches:
   only: travis-ci-marco
+
 install: true
 
 before_cache:
