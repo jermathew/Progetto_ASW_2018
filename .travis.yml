@@ -1,10 +1,17 @@
 language: java
-# safelist
 branches:
   only: travis-ci-jerin
 install: true
 script:
 - cd project
-- ./build-all-projects.sh
+- "./build-all-projects.sh"
 - cd ..
-
+deploy:
+  provider: heroku
+  skip_cleanup: true
+  api_key:
+    secure: nzb1uX4sG8L/4SSpsBJCSOehUU9yg1m4bXHIPyU2oI9r5aETCZGaJihTsMENRTChKSOQZvyiJsxm8rwJmcQKGgIqUUzuwvgJMEkVqqy8hy66EBq5aPLiRXrCNG2njBjnR/X53x+vsbcvT4eZHo7GlLZ9gmls83OuryS1QXyKNhH+4E5QuUQT9sLdgfRF991cX1ehbl/lIMzjPL3mfHTwnlQ++IPwzQDS4m1t3aj4bPGmWRuVVuiD2pmkAhRvftuz5CDLcPr5hQyKnf4Fq+nmDp/lvCrPMasyb/ERxmC8dkxVvDdKlGXlEFg6bWWqmAdQmZYAQLxXgtb2zMkZPmSYRmlU+hcWwgLl9exZdm1BFwwWx8hSXAtSIJC/YXlqXA6P8ajnBQrRL16Md9xGsD0yEnjDsmFvLtDKKIVNq0pV26j46iu/4yTxPSVNfT3H7QBrp8NYXM+kEyKBqhnY7jvPPnCftGNDRKEsSCxiB0kBQVNQX0sgc8EeTbj+3g2I4EYPPas5l3aGayxFNGQPi81ATXiXuhzPwfEBY5fqn+KtYesH9gm1OyaX1zrNksIqsHPSORqDmQpzEGD6Z9LKICAhx+WunQC9OAMqA1TGHQpX5l1dLp4goQNSwaJgQxlNsEJ2XQwkAv9JrHKoFkWD2x7MYuUtmRNDS85lY+4cynz1aDA=
+  app: Progetto_ASW_2018
+  on:
+    repo: jgm25/Progetto_ASW_2018
+    branch: travis-ci-jerin
