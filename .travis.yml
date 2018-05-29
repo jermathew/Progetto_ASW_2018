@@ -1,10 +1,15 @@
 language: java
+services:
+  - docker
+sudo:
+  - required
 branches:
-  only: travis-ci-jerin
+  only: vincenzo-travis
 install: true
 script:
 - cd project
-- "./build-all-projects.sh"
+- bash build-all-projects.sh
+- bash build-all-images.sh
 - cd ..
 deploy:
   provider: heroku
@@ -14,6 +19,6 @@ deploy:
   app: progetto-asw-2018
   on:
     repo: jgm25/Progetto_ASW_2018
-    branch: travis-ci-jerin
+    branch: vincenzo-travis
 
 
