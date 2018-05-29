@@ -2,10 +2,21 @@ language: java
 branches:
   only: travis-ci-jerin
 install: true
+sudo: required
+services: 
+  - docker
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
 script:
 - cd project
-- "./build-all-projects.sh"
-- cd ..
+- bash build-all-projects.sh
+- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+- bash build-all-images.sh
 deploy:
   provider: heroku
   skip_cleanup: true
