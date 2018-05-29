@@ -21,7 +21,7 @@ public class SentenceServiceImpl implements SentenceService {
 	public String buildSentence() {
 		String sentence = "There was a problem assembling the sentence!";
 		sentence =  
-			String.format("%s %s %s %s %s.",
+			String.format("%s %s %s.",
 				subjectService.getWord().getString(),
 				verbService.getWord().getString(),
 				objectService.getWord().getString());
