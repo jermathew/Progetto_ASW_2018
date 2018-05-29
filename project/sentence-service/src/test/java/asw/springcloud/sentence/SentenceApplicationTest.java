@@ -1,4 +1,4 @@
-package asw.springcloud.zuul;
+package asw.springcloud.sentence;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,7 +9,7 @@ import org.junit.Ignore;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @Ignore 
-public class ZuulApplicationTests {
+public class SentenceApplicationTest {
 
 	@Test
 	public void contextLoads() {
