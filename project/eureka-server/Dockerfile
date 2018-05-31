@@ -8,7 +8,7 @@ ADD build/libs/sentence-eureka-server-0.0.1-SNAPSHOT.jar sentence-eureka-server.
 
 EXPOSE 8761
 
-ENTRYPOINT ["java", "-Xmx128m", "-Xms128m"]
+ENTRYPOINT ["/usr/bin/java", "-Xmx128m", "-Xms128m"]
 
 CMD ["-jar", "sentence-eureka-server.jar"]
 
