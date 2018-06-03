@@ -21,12 +21,8 @@ public class SentenceController {
 	 */
 	@GetMapping("/")
 	public @ResponseBody String getSentence() {
-		String sentence= "<h3>Some Sentences</h3><br/>" +	  
-				sentenceService.buildSentence() + "<br/><br/>" +
-				sentenceService.buildSentence() + "<br/><br/>" +
-				sentenceService.buildSentence() + "<br/><br/>" +
-				sentenceService.buildSentence() + "<br/><br/>" +
-				sentenceService.buildSentence() + "<br/><br/>";
+		String sentence= "<h3>A Sentence</h3><br/>" +	  
+		sentenceService.buildSentence() + "<br/><br/>";
 		logger.info("getSentence(): " + sentence);
 		return sentence;
 	}
