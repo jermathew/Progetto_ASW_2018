@@ -22,7 +22,7 @@ public class WordControllerTest {
 
 	@Test
 	public void words() throws Exception {
-		mockMvc.perform(get("/"))//
+		mockMvc.perform(get("/word-json"))//
 				.andExpect(jsonPath("$.word", anyOf(is("foo"), is("bar"), is("baz"))));
 	}
 

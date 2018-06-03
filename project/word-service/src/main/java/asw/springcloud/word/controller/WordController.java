@@ -20,7 +20,11 @@ public class WordController {
 	private final Logger logger = Logger.getLogger("asw.springcloud.word"); 
 
 	@GetMapping("/")
-	public Word getWord() {
+	public String getWord() {
+		return new Word(words[random.nextInt(words.length)]).getString();
+	}
+	@GetMapping("/word-json")
+	public Word getJSONWord() {
 		return new Word(words[random.nextInt(words.length)]);
 	}
 }
