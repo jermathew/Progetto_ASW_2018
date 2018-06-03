@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 
 public class TestErratoTest {
     @Test
-    public void fail(){
-        assertEquals(10,20);
+    public void correct(){
+        assertEquals(20,20);
     }
 }
