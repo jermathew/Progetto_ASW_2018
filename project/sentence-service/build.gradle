@@ -18,7 +18,12 @@ jar {
 	baseName = 'sentence'
 	version = '0.0.1-SNAPSHOT'
 }
-
+test {
+    testLogging {
+        events "passed", "skipped", "failed"
+        exceptionFormat "full"
+    }
+}
 sourceCompatibility = 1.8
 
 repositories {
