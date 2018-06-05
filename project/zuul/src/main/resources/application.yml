@@ -10,6 +10,9 @@ eureka:
 # leave eureka.instance.leaseRenewalIntervalInSeconds unchanged in production
 # just here to provide quicker updates to Eureka for demos
   instance: 
-    leaseRenewalIntervalInSeconds: 10
+#    leaseRenewalIntervalInSeconds: 15
+    metadataMap: 
+      instanceId: ${spring.application.name}:${random.value}
+
 server:
   port: 8080
