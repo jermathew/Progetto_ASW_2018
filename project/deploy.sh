@@ -1,3 +1,3 @@
 #!/bin/bash
-docker-compose build
-docker-compose up
+scp -o "StrictHostKeyChecking no" -i asw_key.pem project/restart-service.sh $AWS_USER@$AWS_HOSTNAME:$AWS_DEPLOY_PATH
+ssh -o "StrictHostKeyChecking no" -i asw_key.pem $AWS_USER@$AWS_HOSTNAME 'bash restart-service.sh'

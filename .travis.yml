@@ -30,8 +30,7 @@ script:
 deploy:
   skip_cleanup: true
   provider: script
-  script: ssh -o "StrictHostKeyChecking no" -i asw_key.pem $AWS_USER@$AWS_HOSTNAME 'touch prova.txt'
-  on:
+  script: bash project/deploy.sh
     branch: 
       - travis-ci-jerin
       - travis-ci-marco
