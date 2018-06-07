@@ -8,7 +8,7 @@ ADD build/libs/word-0.0.1-SNAPSHOT.jar word.jar
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-Xmx128m", "-Xms128m"]
+ENTRYPOINT ["/usr/bin/java", "-Xmx128m", "-Xms128m"]
 
 CMD ["-jar", "word.jar"]
 

@@ -10,7 +10,7 @@ eureka:
 # leave eureka.instance.leaseRenewalIntervalInSeconds unchanged in production
 # just here to provide quicker updates to Eureka for demos
   instance: 
-    leaseRenewalIntervalInSeconds: 5
+#    leaseRenewalIntervalInSeconds: 15
     metadataMap: 
       instanceId: ${spring.application.name}:${random.value}
 server: 
@@ -23,7 +23,7 @@ spring:
   profiles: subject
   application: 
     name: subject
-words: He,She,Mary,John,Paul
+words: He,She,Ann,Mary,John,Paul
   
 --- 
 spring: 
