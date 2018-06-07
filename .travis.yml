@@ -23,7 +23,7 @@ before_script:
 - chmod 400 asw_key.pem 
 script:
 - cd project
-- bash build-all-projects.sh
+- bash build-and-runIntegration.sh
 - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 - bash build-all-images.sh
 - cd ..

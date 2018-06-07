@@ -1,7 +1,6 @@
 version: '2'
 services:
   eureka:
-<<<<<<< HEAD
     image: vmartello95/eureka-server
     container_name: eureka 
 #    ports:
