@@ -1,4 +1,4 @@
-package asw.springcloud.sentence;
+package asw.springcloud.sentence.word;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,24 +18,17 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 
 @RunWith(MockitoJUnitRunner.class)
-public class SentenceControllerTests {
+public class SubjectClientTests {
 
 	@Mock
 	SubjectClient subject;
-	@Mock
-	VerbClient verb;
-	@Mock
-	ObjectClient object;
 
 	@InjectMocks
 	private WordServiceHystrixImpl service;
 
 	@Test
-	public void testGetSentence() {
+	public void testGetSubject() {
 		when(subject.getWord()).thenReturn("This");
-		when(verb.getWord()).thenReturn("is");
-		when(object.getWord()).thenReturn("a test");
-
-		Assert.assertEquals("This is a test.", service.buildSentence());
+		Assert.assertEquals("This", service.getSubject());
 	}
 }

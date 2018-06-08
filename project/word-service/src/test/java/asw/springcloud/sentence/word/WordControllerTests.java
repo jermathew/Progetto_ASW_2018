@@ -1,4 +1,4 @@
-package asw.springcloud.word;
+package asw.springcloud.sentence.word;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -8,14 +8,13 @@ import org.junit.Ignore;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.hamcrest.CoreMatchers.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(properties = "words = controller1,controller2")
+@SpringBootTest(properties = "words = foo,baz,boh")
 @AutoConfigureMockMvc
 public class WordControllerTests {
 
@@ -26,6 +25,6 @@ public class WordControllerTests {
 	public void testGetWord() throws Exception {
 		mockMvc.perform(get("/"))
 		.andExpect(status().isOk())
-		.andExpect(content().string(anyOf(is("controller1"),is("controller2"))));
+		.andExpect(content().string(anyOf(is("foo"),is("baz"),is("boh"))));
 	}
 }

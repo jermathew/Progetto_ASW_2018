@@ -1,4 +1,4 @@
-package asw.springcloud.word;
+package asw.springcloud.sentence.word;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
