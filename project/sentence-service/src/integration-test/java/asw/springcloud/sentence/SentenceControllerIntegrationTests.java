@@ -30,12 +30,13 @@ import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
 
-@RunWith(SpringRunner.class)
+/*@RunWith(SpringRunner.class)
 @SpringBootTest()
 @AutoConfigureMockMvc
-@Ignore
+@Ignore */
+@RunWith(MockitoJUnitRunner.class)
 public class SentenceControllerIntegrationTests {
-	@Autowired
+	/*@Autowired
 	private MockMvc mockMvc;
 	
 	@Mock
@@ -59,5 +60,24 @@ public class SentenceControllerIntegrationTests {
 		mockMvc.perform(get("/sentence"))
 		.andExpect(status().isOk())
 		.andExpect(content().string("This is a test."));
+	}*/
+
+	@Mock
+	SubjectClient subject;
+	@Mock
+	VerbClient verb;
+	@Mock
+	ObjectClient object;
+
+	@InjectMocks
+	private WordServiceHystrixImpl service;
+
+	@Test
+	public void testGetSentence() {
+		when(subject.getWord()).thenReturn("This");
+		when(verb.getWord()).thenReturn("is");
+		when(object.getWord()).thenReturn("a test");
+
+		Assert.assertEquals("This is a test.", service.buildSentence());
 	}
 }
