@@ -4,9 +4,11 @@ buildscript {
 	}
 	repositories {
 		mavenCentral()
+		jcenter()
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath 'org.unbroken-dome.gradle-plugins:gradle-testsets-plugin:1.4.5'
 	}
 }
 
@@ -14,6 +16,7 @@ apply plugin: 'java'
 // apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'org.unbroken-dome.test-sets'
 
 group = 'asw'
 version = '0.0.1-SNAPSHOT'
@@ -22,6 +25,11 @@ sourceCompatibility = 1.8
 bootJar {
 	baseName = 'sentence'
 }
+testSets {
+	integrationTest	{dirName= 'integration-test'}
+}
+check.dependsOn integrationTest
+integrationTest.mustRunAfter test
 
 repositories {
 //	mavenCentral()
@@ -44,4 +52,17 @@ dependencies {
 	compile('org.springframework.cloud:spring-cloud-starter-netflix-hystrix')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+test{
+	testLogging {
+		events "passed", "skipped", "failed"
+        exceptionFormat "full"
+	}
+}
+integrationTest {
+	testLogging {
+		events "passed", "skipped", "failed"
+        exceptionFormat "full"
+	}
 }
