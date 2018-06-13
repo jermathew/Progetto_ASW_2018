@@ -16,7 +16,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest(properties = "words = foo,baz,boh")
 @AutoConfigureMockMvc
-public class WordControllerTests {
+public class WordControllerIntegrationTests {
 
 	@Autowired
 	MockMvc mockMvc;
