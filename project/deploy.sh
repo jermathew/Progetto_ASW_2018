@@ -5,5 +5,5 @@
 
 #Aspetto 5 minuti e controllo
 #sleep 300
-curl -s "http://${AWS_HOSTNAME}:8080/sentence" | awk '{n=split($0, array, " "); if (n==3) {exit 0;} else {exit 1;}}'
+curl -s "http://${AWS_HOSTNAME}:8080/sentence" | awk '{n=split($0, array, " "); if (n==3) {echo "ent-to-end test passed"; exit 0;} else {echo "end to end test failed"; exit 1;}}'
 
