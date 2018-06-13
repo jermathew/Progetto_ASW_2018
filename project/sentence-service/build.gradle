@@ -27,9 +27,12 @@ bootJar {
 }
 testSets {
 	integrationTest	{dirName= 'integration-test'}
+	endToEndTest	{dirName= 'end-to-end-test'}
 }
 check.dependsOn integrationTest
+check.dependsOn endToEndTest
 integrationTest.mustRunAfter test
+endToEndTest.mustRunAfter integrationTest
 
 repositories {
 //	mavenCentral()
@@ -52,6 +55,9 @@ dependencies {
 	compile('org.springframework.cloud:spring-cloud-starter-netflix-hystrix')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+	//mettere in testcompile
+	compile group: 'com.github.kevinsawicki', name: 'http-request', version: '5.3'
+
 }
 
 test{
@@ -61,6 +67,12 @@ test{
 	}
 }
 integrationTest {
+	testLogging {
+		events "passed", "skipped", "failed"
+        exceptionFormat "full"
+	}
+}
+endToEndTest {
 	testLogging {
 		events "passed", "skipped", "failed"
         exceptionFormat "full"
