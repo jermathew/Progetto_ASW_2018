@@ -32,7 +32,6 @@ testSets {
 check.dependsOn integrationTest
 check.dependsOn endToEndTest
 integrationTest.mustRunAfter test
-endToEndTest.mustRunAfter integrationTest
 
 repositories {
 //	mavenCentral()
