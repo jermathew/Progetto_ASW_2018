@@ -5,9 +5,7 @@ sudo:
   - required
 branches:
   only: 
-    - vincenzo-travis
-    - travis-ci-jerin
-    - travis-ci-marco
+    - master
 before_cache:
 - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
 - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
@@ -33,6 +31,4 @@ deploy:
   script: bash project/deploy.sh
   on:
     branch: 
-      - travis-ci-jerin
-      - travis-ci-marco
-      - vincenzo-travis
+      - master
