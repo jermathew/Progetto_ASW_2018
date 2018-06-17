@@ -18,12 +18,7 @@ public class SentenceController {
 
 	@RequestMapping("/")
 	public String getSentence() {
-		String sentence = 
-			wordService.getSubject() + " " + 
-			wordService.getVerb() + " " + 
-			wordService.getObject() + ".";
-		logger.info("getSentence(): " + sentence);
-		return sentence; 
+		return wordService.buildSentence();
 	}
 	
 }

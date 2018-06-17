@@ -19,35 +19,57 @@ public class WordServiceHystrixImpl implements WordService {
 
 	@Autowired 
 	private ObjectClient objectClient;
-	
+
 	@HystrixCommand(fallbackMethod="getFallbackSubject")
 	public String getSubject() {
 		return subjectClient.getWord(); 
 	} 
-	
+
 	public String getFallbackSubject() {
 		logger.info("getSubject(): using fallback word: Someone");
 		return "Someone"; 
 	}
-	
+
 	@HystrixCommand(fallbackMethod="getFallbackVerb")
 	public String getVerb() {
 		return verbClient.getWord(); 
 	}
-	
+
 	public String getFallbackVerb() {
 		logger.info("getVerb(): using fallback word: does");
 		return "does"; 
 	}
-	
+
 	@HystrixCommand(fallbackMethod="getFallbackObject")
 	public String getObject() {
 		return objectClient.getWord(); 
 	}
-	
+
 	public String getFallbackObject() {
 		logger.info("getObject(): using fallback word: something");
 		return "something"; 
 	}
+
+	public String buildSentence() {
+		String sentence = "" + 
+				this.getSubject() + " " + 
+				this.getVerb() + " " + 
+				this.getObject() + ".";
+		logger.info("getSentence(): " + sentence);
+		return sentence; 	
+	} 
+	
+	public void setSubject(SubjectClient s) {
+		this.subjectClient=s;
+	}
+	
+	public void setObject(ObjectClient s) {
+		this.objectClient=s;
+	}
+	
+	public void setVerb(VerbClient s) {
+		this.verbClient=s;
+	}
+	
 
 }
