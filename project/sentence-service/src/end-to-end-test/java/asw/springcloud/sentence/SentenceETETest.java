@@ -11,7 +11,7 @@ public class SentenceETETest {
 	@Test
 	public void testGetSentence() {
 		
-		String response = HttpRequest.get("http://ec2-18-191-110-245.us-east-2.compute.amazonaws.com").body();
+		String response = HttpRequest.get("http://ec2-18-216-21-241.us-east-2.compute.amazonaws.com").body();
 		System.out.println("Response was: " + response);
 		String[] res = response.split(" ");
 		Assert.assertEquals(3, res.length);
