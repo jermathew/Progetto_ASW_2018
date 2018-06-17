@@ -8,7 +8,7 @@ Progetto per il corso di Architettura dei Sistemi Software (a.a. 2017/2018)
 ## Table of Contents 
 
 - [Caratteristiche generali](##Caratteristiche generali)
--	[Applicazione](##applicazione)
+- [Applicazione](##applicazione)
 - [Team](##team)
 - [License](##license)
 - [Step deployment pipeline](##step)
@@ -38,11 +38,13 @@ Travis offre la possibilità di eseguire degli script bash se gli step della pip
   	- bash <nome_script.sh>
 
 In generale Travis definisce alcuni step predefiniti nella deployment pipeline, ognuno identificato da un nome simbolico (ad esempio fase di *install*, *before_install*, *deploy*). La sintassi generale è così definita:
-	<nome_fase>:
-  			- azione 1
-        -	azione 2
-        
-        - azione n
+
+	nome_fase: 
+  		- azione 1
+		- azione 2
+        	.
+		.
+        	- azione n
 
 La **pipeline** è così formata:
 * alcune azioni preliminari, come la specifica del linguaggio di programmazione utilizzato, l'abilitazione di *sudo* e l'abilitazione di alcuni servizi aggiuntivi, nel nostro caso docker
