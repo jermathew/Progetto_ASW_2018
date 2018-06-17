@@ -7,11 +7,11 @@ Progetto per il corso di Architettura dei Sistemi Software (a.a. 2017/2018)
 
 ## Table of Contents 
 
-- [Caratteristiche generali](##Caratteristiche generali)
-- [Applicazione](##applicazione)
-- [Team](##team)
-- [License](##license)
-- [Step deployment pipeline](##step)
+- [Caratteristiche generali](#caratteristiche-generali)
+- [Applicazione](#applicazione)
+- [Step deployment pipeline](#step-deployment-pipeline)
+- [Team](#team)
+- [License](#license)
 
 
 
