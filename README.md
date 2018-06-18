@@ -24,20 +24,22 @@ Le principali tecnologie utilizzate nel progetto sono:
 * [Travis](https://travis-ci.org/), un servizio su cloud che permette di definire ed eseguire delle pipeline 
 * [Amazon AWS](https://aws.amazon.com/it/) per ottenere una istanza del servizio EC2 su cui rilasciare l'applicazione
 
+
+
 ## Applicazione
 
 L'applicazione consiste in un generatore di frasi casuali. Essa consta di più servizi distribuiti:
 
-* Sentence, il servizio principale, applicazione Spring Boot che crea frasi sempre diverse, in esecuzione sulla porta 8080.
+* Sentence, il servizio principale, applicazione [Spring Boot](https://spring.io/projects/spring-boot/) che crea frasi sempre diverse, in esecuzione sulla porta 8080.
 * Subject, che crea il soggetto, in esecuzione sulla porta 8081.
 * Verb, che crea il verbo, in esecuzione sulla porta 8082.
 * Object, che crea il complemento oggetto, in esecuzione sulla porta 8083.
 
-Sentence sfrutta i 3 servizi di Subject, Verb e Object (i quali creano parole di tipo diverso) al fine di generare una frase di senso compiuto. Per semplicità, essi vengono trattati come profili di un servizio [Spring Boot](https://spring.io/projects/spring-boot/) più generico, ovvero Word. In pratica, il soggetto, il verbo ed il complemento generati saranno istanze di oggetti Word, i quali verranno sfruttati da Sentence tramite REST nella formazione della frase finale.
+Sentence sfrutta i 3 servizi di Subject, Verb e Object (i quali creano parole di tipo diverso) al fine di generare una frase di senso compiuto. Per semplicità, essi vengono trattati come profili di un servizio Spring Boot più generico, ovvero Word. In pratica, il soggetto, il verbo ed il complemento oggetto generati saranno istanze di oggetti Word, i quali verranno sfruttati da Sentence tramite REST nella formazione della frase finale.
 
 Inoltre, abbiamo 2 ulteriori servizi:
-* [Eureka](https://github.com/Netflix/eureka/), un servizio di Discovery 
-* [Zuul](https://github.com/Netflix/zuul/), un servizio di gateway
+* [Eureka](https://github.com/Netflix/eureka/), un servizio di Discovery.
+* [Zuul](https://github.com/Netflix/zuul/), un servizio di gateway.
 
 Di seguito, uno schema concettuale dell'applicazione:
 
@@ -58,8 +60,11 @@ Sono stati definiti tre tipi di test per verificare il corretto funzionamento de
 * End-To-End tests, eseguiti in fase di deploy, per testare il corretto instaurarsi delle dipendenze tra i diversi servizi e per verificare che il flusso di informazioni sia pertinente e segue il percorso prefissato.
 
 Fonti per il testing: 
-* [Baeldung](http://www.baeldung.com/)
 * [Spring Testing](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html)
+* [Baeldung](http://www.baeldung.com/)
+
+
+
 ## Step deployment pipeline
 
 Come già accennato la pipeline è composta di vari step. Per sfruttare Travis è necessario semplicemente fare login sul sito web di Travis tramite il proprio account github e specificare su quali **repository** deve lavorare Travis. 
@@ -87,6 +92,9 @@ La **pipeline** è così formata:
 * l'esecuzione dello script *build-all-images.sh* che legge i **DockerFile** relativi ai quattro servizi dell'applicazione, costruisce le relative immagini e le carica su [DockerHub](https://hub.docker.com/)
 * una fase di **deploy** in cui viene eseguito lo script *deploy.sh*. Questo script trasferisce a sua volta sulla istanza di EC2 alcuni script e il *docker.compose.yml* . Gli script scaricano le immagini relative all'applicazione da DockerHub, dalle 4 immagini istanziano 4 contenitori che poi sono fatti comunicare tramite docker-compose.
 * l'esecuzione di test end-to-end per testare ulteriormente l'applicazione
+
+
+
 ## Team
 
 - [Vincenzo Martello](https://github.com/vincenzomartello)
@@ -94,6 +102,8 @@ La **pipeline** è così formata:
 - [Nicholas Napolitano](https://github.com/nicholasnapolitano)
 - [Marco Oliva](https://github.com/maroliva)
 - [Simone Pellegrini](https://github.com/spellegrini1995)
+
+
 
 ## License
 
