@@ -26,6 +26,30 @@ Le principali tecnologie utilizzate nel progetto sono:
 
 ## Applicazione
 
+L'applicazione consiste in un generatore di frasi casuali. Essa consta di più servizi distribuiti:
+* Sentence, il servizio principale, applicazione Spring Boot che crea frasi sempre diverse, in esecuzione sulla porta 8080.
+* Subject, che crea il soggetto, in esecuzione sulla porta 8081.
+* Verb, che crea il verbo, in esecuzione sulla porta 8082.
+* Object, che crea il complemento oggetto, in esecuzione sulla porta 8083.
+
+Sentence sfrutta i 3 servizi di Subject, Verb e Object (i quali creano parole di tipo diverso) al fine di generare una frase di senso compiuto. Per semplicità, essi vengono trattati come profili di un servizio Spring Boot più generico, ovvero Word. In pratica, il soggetto, il verbo ed il complemento generati saranno istanze di oggetti Word, i quali verranno sfruttati da Sentence tramite REST nella formazione della frase finale.
+
+Inoltre, abbiamo 2 ulteriori servizi:
+* [Eureka](https://github.com/Netflix/eureka/), un servizio di Discovery 
+* [Zuul](https://github.com/Netflix/zuul/), un servizio di gateway
+
+Di seguito, uno schema concettuale dell'applicazione:
+
+![Schema](https://github.com/NicholasNapolitano/Progetto_ASW_2018/blob/master/Schema%20Concettuale.png)
+
+E' necessario creare immagini contenitorizzate per ogni servizio al fine di eseguire l'applicazione. Tale composizione di contenitori è stata resa possibile tramite lo strumento **Docker Compose**, che permette di eseguire e definire applicazioni Docker basate su più contenitori. 
+
+Docker Compose è basato sull’utilizzo di un file di configurazione **docker-compose.yml** per specificare i diversi servizi che compongono un’applicazione. Dopo di che, è possibile avviare l'applicazione eseguendo semplici comandi:
+* **docker-compose build**, per costruire le immagini per i contenitori dell’applicazione. 
+* **docker-compose up**, per avviare l’applicazione (creando e avviando i suoi contenitori).
+
+Per arrestare l'applicazione, si esegue il comando **docker-compose down**
+
 ## Step deployment pipeline
 
 Come già accennato la pipeline è composta di vari step. Per sfruttare Travis è necessario semplicemente fare login sul sito web di Travis tramite il proprio account github e specificare su quali **repository** deve lavorare Travis. 
