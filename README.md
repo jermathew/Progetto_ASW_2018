@@ -30,10 +30,12 @@ Le principali tecnologie utilizzate nel progetto sono:
 
 L'applicazione consiste in un generatore di frasi casuali. Essa consta di più servizi distribuiti:
 
-* Sentence, il servizio principale, applicazione [Spring Boot](https://spring.io/projects/spring-boot/) che crea frasi sempre diverse, in esecuzione sulla porta 8080.
-* Subject, che crea il soggetto, in esecuzione sulla porta 8081.
-* Verb, che crea il verbo, in esecuzione sulla porta 8082.
-* Object, che crea il complemento oggetto, in esecuzione sulla porta 8083.
+* Sentence, il servizio principale, applicazione [Spring Boot](https://spring.io/projects/spring-boot/) che crea frasi sempre diverse.
+* Subject, che crea il soggetto.
+* Verb, che crea il verbo.
+* Object, che crea il complemento oggetto.
+
+Tutti i servizi sono in esecuzione sulla porta 8080, ma in percorsi differenti.
 
 Sentence sfrutta i 3 servizi di Subject, Verb e Object (i quali creano parole di tipo diverso) al fine di generare una frase di senso compiuto. Per semplicità, essi vengono trattati come profili di un servizio Spring Boot più generico, ovvero Word. In pratica, il soggetto, il verbo ed il complemento oggetto generati saranno istanze di oggetti Word, i quali verranno sfruttati da Sentence tramite REST nella formazione della frase finale.
 
