@@ -55,6 +55,11 @@ La **pipeline** è così formata:
 * l'esecuzione di test end-to-end per testare ulteriormente l'applicazione
 ## Team
 
+- [Vincenzo Martello](https://github.com/vincenzomartello)
+- [Jerin George Mathew](https://github.com/jgm25)
+- [Nicholas Napolitano](https://github.com/nicholasnapolitano)
+- [Marco Oliva](https://github.com/maroliva)
+- [Simone Pellegrini](https://github.com/spellegrini1995)
 
 ## License
 
