@@ -15,5 +15,5 @@ rc=$?; if [[ $rc != 0 ]]; then echo "Build sentence-service failed"; exit $rc; f
 
 
 #Build zuul
-gradle build -b zuul/build.gradle --build-cache -x integrationTest
+gradle build -b zuul/build.gradle --build-cache
 rc=$?; if [[ $rc != 0 ]]; then echo "Build zuul failed"; exit $rc; fi

@@ -45,7 +45,7 @@ Inoltre, abbiamo 2 ulteriori servizi:
 
 Di seguito, uno schema concettuale dell'applicazione:
 
-![Schema](https://github.com/NicholasNapolitano/Progetto_ASW_2018/blob/master/Schema%20Concettuale.png)
+![Schema](https://github.com/jgm25/Progetto_ASW_2018/blob/master/images/Schema_Concettuale.png)
 
 E' necessario creare immagini contenitorizzate per ogni servizio al fine di eseguire l'applicazione. Tale composizione di contenitori è stata resa possibile tramite lo strumento **Docker Compose**, che permette di eseguire e definire applicazioni Docker basate su più contenitori. 
 
@@ -109,4 +109,4 @@ La **pipeline** è così formata:
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE.md file for details
+This project is licensed under the MIT License - see the LICENSE file for details
