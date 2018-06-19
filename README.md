@@ -62,12 +62,6 @@ Sono stati definiti tre tipi di test per verificare il corretto funzionamento de
 * Integration tests, eseguiti in fase di build, in cui ogni singolo servizio viene combinato e testato come gruppo.
 * End-To-End tests, eseguiti in fase di deploy, per testare il corretto instaurarsi delle dipendenze tra i diversi servizi e per verificare che il flusso di informazioni sia pertinente e segue il percorso prefissato.
 
-Fonti per il testing: 
-* [Spring Testing](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html)
-* [Baeldung](http://www.baeldung.com/)
-
-
-
 ## Step deployment pipeline
 
 Come già accennato la pipeline è composta di vari step. Per sfruttare Travis è necessario semplicemente fare login sul sito web di Travis tramite il proprio account github e specificare su quali **repository** deve lavorare Travis. 
@@ -109,10 +103,10 @@ Infine si può notare che nel *.travis.yml* sono state utilizzate delle variabil
 
 ## Fonti
 	
-	Di seguito elenchiamo le varie fonti utilizzate per realizzare l'applicazione e scrivere la pipeline:
+Di seguito elenchiamo le varie fonti utilizzate per realizzare l'applicazione e scrivere la pipeline:
 	* [Spring Testing](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html)
 	* [Baeldung](http://www.baeldung.com/)
-	* [Integration Test con Gradle](https://www.petrikainulainen.net/programming/gradle/getting-started-with-gradle-integration-testing-with-the-testsets-plugin/)
+	* [Integration Test con Gradle](https://www.petrikainulainen.net/programming/gradle/getting-started-with-gradle-integration-	testing-with-the-testsets-plugin/)
 
 ## License
 
