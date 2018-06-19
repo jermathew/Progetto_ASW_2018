@@ -104,9 +104,9 @@ Infine si può notare che nel *.travis.yml* sono state utilizzate delle variabil
 ## Fonti
 	
 Di seguito elenchiamo le varie fonti utilizzate per realizzare l'applicazione e scrivere la pipeline:
-	* [Spring Testing](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html)
-	* [Baeldung](http://www.baeldung.com/)
-	* [Integration Test con Gradle](https://www.petrikainulainen.net/programming/gradle/getting-started-with-gradle-integration-	testing-with-the-testsets-plugin/)
+* [Spring Testing](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html)
+* [Baeldung](http://www.baeldung.com/)
+* [Integration Test con Gradle](https://www.petrikainulainen.net/programming/gradle/getting-started-with-gradle-integration-	testing-with-the-testsets-plugin/)
 
 ## License
 
