@@ -60,7 +60,7 @@ Sono stati definiti tre tipi di test per verificare il corretto funzionamento de
 
 * JUnit tests, eseguiti in locale, per testare singolarmente le componenti dell'applicazione, in particolare Word e Sentence.
 * Integration tests, eseguiti in fase di build, in cui ogni singolo servizio viene combinato e testato come gruppo.
-* End-To-End tests, eseguiti in fase di deploy, per testare il corretto instaurarsi delle dipendenze tra i diversi servizi e per verificare che il flusso di informazioni sia pertinente e segue il percorso prefissato.
+* End-To-End tests, eseguiti in fase di deploy, per testare il corretto instaurarsi delle dipendenze tra i diversi servizi e per verificare che il flusso di informazioni sia pertinente e segua il percorso prefissato.
 
 L'applicazione è raggiungibile tramite questo [link](http://ec2-18-216-21-241.us-east-2.compute.amazonaws.com:8080/)
 
