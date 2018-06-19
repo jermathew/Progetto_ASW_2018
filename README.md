@@ -45,7 +45,7 @@ Inoltre, abbiamo 2 ulteriori servizi:
 
 Di seguito, uno schema concettuale dell'applicazione:
 
-![Schema](https://github.com/jgm25/Progetto_ASW_2018/blob/master/images/Schema_Concettuale.png)
+![Schema](images/Schema_Concettuale.png)
 
 E' necessario creare immagini contenitorizzate per ogni servizio al fine di eseguire l'applicazione. Tale composizione di contenitori è stata resa possibile tramite lo strumento **Docker Compose**, che permette di eseguire e definire applicazioni Docker basate su più contenitori. 
 
