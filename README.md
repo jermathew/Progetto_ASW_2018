@@ -5,7 +5,7 @@ Progetto per il corso di Architettura dei Sistemi Software (a.a. 2017/2018)
 
 
 
-## Table of Contents 
+## Indice dei contenuti
 
 - [Caratteristiche generali](#caratteristiche-generali)
 - [Applicazione](#applicazione)
@@ -113,6 +113,9 @@ Infine si può notare che nel *.travis.yml* sono state utilizzate delle variabil
 	* [Spring Testing](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html)
 	* [Baeldung](http://www.baeldung.com/)
 	* [Integration Test con Gradle](https://www.petrikainulainen.net/programming/gradle/getting-started-with-gradle-integration-testing-with-the-testsets-plugin/)
+	* [Travis-CI](https://docs.travis-ci.com/)
+	* [Docker](https://docs.docker.com/)
+	* [Docker Compose](https://docs.docker.com/compose/)
 
 ## License
 
