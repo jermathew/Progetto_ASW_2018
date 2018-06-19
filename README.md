@@ -11,6 +11,7 @@ Progetto per il corso di Architettura dei Sistemi Software (a.a. 2017/2018)
 - [Applicazione](#applicazione)
 - [Step deployment pipeline](#step-deployment-pipeline)
 - [Team](#team)
+- [Fonti](#fonti)
 - [License](#license)
 
 
@@ -95,7 +96,8 @@ La **pipeline** è così formata:
 * una fase di **deploy** in cui viene eseguito lo script *deploy.sh*. Questo script trasferisce a sua volta sulla istanza di EC2 alcuni script e il *docker.compose.yml* . Gli script scaricano le immagini relative all'applicazione da DockerHub, dalle 4 immagini istanziano 4 contenitori che poi sono fatti comunicare tramite docker-compose.
 * l'esecuzione di test end-to-end per testare ulteriormente l'applicazione
 
-
+Infine si può notare che nel *.travis.yml* sono state utilizzate delle variabili d'ambiente, ad esempio
+*DOCKER_USERNAME*. Infatti Travis permette di definire, ad esempio nei setting della repository (metodo da noi adottato) delle variabili d'ambiente pubbliche oppure private (ad esempio un certo URL, o delle credenziali per accedere a dei servizi esterni)
 
 ## Team
 
@@ -105,7 +107,12 @@ La **pipeline** è così formata:
 - [Marco Oliva](https://github.com/maroliva)
 - [Simone Pellegrini](https://github.com/spellegrini1995)
 
-
+## Fonti
+	
+	Di seguito elenchiamo le varie fonti utilizzate per realizzare l'applicazione e scrivere la pipeline:
+	* [Spring Testing](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html)
+	* [Baeldung](http://www.baeldung.com/)
+	* [Integration Test con Gradle](https://www.petrikainulainen.net/programming/gradle/getting-started-with-gradle-integration-testing-with-the-testsets-plugin/)
 
 ## License
 
