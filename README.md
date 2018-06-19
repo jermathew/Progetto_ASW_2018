@@ -48,7 +48,7 @@ Di seguito, uno schema concettuale dell'applicazione:
 
 ![Schema](images/Schema_Concettuale.png)
 
-E' necessario creare immagini contenitorizzate per ogni servizio al fine di eseguire l'applicazione. Tale composizione di contenitori è stata resa possibile tramite lo strumento **Docker Compose**, che permette di eseguire e definire applicazioni Docker basate su più contenitori. 
+Ad ogni servizio corrisponde un'immagine docker. In particolare ,essendo il servizio Word composte da tre sottoservizi,a runtime avremo 6 contenitori Docker in esecuzione. La comunicazione tra contenitori è attuata tramite **Docker Compose**, che come sappiamo permette di eseguire e definire applicazioni Docker basate su più contenitori. 
 
 Docker Compose è basato sull’utilizzo di un file di configurazione **docker-compose.yml** per specificare i diversi servizi che compongono un’applicazione. Dopo di che, è possibile avviare l'applicazione eseguendo semplici comandi:
 * **docker-compose build**, per costruire le immagini per i contenitori dell’applicazione. 
@@ -61,6 +61,8 @@ Sono stati definiti tre tipi di test per verificare il corretto funzionamento de
 * JUnit tests, eseguiti in locale, per testare singolarmente le componenti dell'applicazione, in particolare Word e Sentence.
 * Integration tests, eseguiti in fase di build, in cui ogni singolo servizio viene combinato e testato come gruppo.
 * End-To-End tests, eseguiti in fase di deploy, per testare il corretto instaurarsi delle dipendenze tra i diversi servizi e per verificare che il flusso di informazioni sia pertinente e segue il percorso prefissato.
+
+L'applicazione è raggiungibile tramite questo [link](http://ec2-18-216-21-241.us-east-2.compute.amazonaws.com:8080/)
 
 ## Step deployment pipeline
 
