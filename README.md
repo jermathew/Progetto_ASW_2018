@@ -1,5 +1,5 @@
 # Progetto ASW 2018
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Build Status](https://travis-ci.org/jgm25/Progetto_ASW_2018.svg?branch=master)](https://travis-ci.org/jgm25/Progetto_ASW_2018)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Build Status](https://travis-ci.org/jgeorgemathew/Progetto_ASW_2018.svg?branch=master)](https://travis-ci.org/jgm25/Progetto_ASW_2018)
 
 Progetto per il corso di Architettura dei Sistemi Software (a.a. 2017/2018)
 
